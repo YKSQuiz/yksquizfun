@@ -1,8 +1,8 @@
-# YKS Quiz Uygulaması - v34 - Detaylı Dokümantasyon
+# YKS Quiz Uygulaması - v35 - Detaylı Dokümantasyon
 
 ## 📋 İçindekiler
 1. [Genel Bakış](#genel-bakış)
-2. [Yeni Özellikler v34](#yeni-özellikler-v34)
+2. [Yeni Özellikler v35](#yeni-özellikler-v35)
 3. [Teknik Mimari](#teknik-mimari)
 4. [Kullanıcı Sistemi](#kullanıcı-sistemi)
 5. [Quiz Sistemi](#quiz-sistemi)
@@ -22,7 +22,7 @@
 
 ## 🎯 Genel Bakış
 
-**YKS Quiz v34**, Yükseköğretim Kurumları Sınavı (YKS) için hazırlanan öğrencilere yönelik modern bir quiz uygulamasıdır. Uygulama, TYT (Temel Yeterlilik Testi) ve AYT (Alan Yeterlilik Testi) konularını kapsayan kapsamlı bir eğitim platformudur.
+**YKS Quiz v35**, Yükseköğretim Kurumları Sınavı (YKS) için hazırlanan öğrencilere yönelik modern bir quiz uygulamasıdır. Uygulama, TYT (Temel Yeterlilik Testi) ve AYT (Alan Yeterlilik Testi) konularını kapsayan kapsamlı bir eğitim platformudur.
 
 ### 🎯 Ana Hedefler
 - YKS sınavına hazırlanan öğrencilere interaktif quiz deneyimi sunmak
@@ -39,9 +39,22 @@
 - **Real-time Updates:** Firebase ile gerçek zamanlı güncellemeler
 - **Optimize Edilmiş Performans:** Bundle optimizasyonu ve kod temizliği
 
+### 📦 **Repository Bilgisi**
+- **GitHub Repo:** [https://github.com/YKSQuiz/yksquizfun.git](https://github.com/YKSQuiz/yksquizfun.git)
+- **Versiyon:** v35
+- **Son Güncelleme:** 2024-12-19
+- **Durum:** ✅ Aktif geliştirme
+
 ---
 
-## �� Yeni Özellikler v29
+## 🎨 Yeni Özellikler v35
+
+### 🔐 **Login Ekranı İyileştirmeleri**
+- **Modern SVG İkonlar:** Emoji ikonlar yerine profesyonel SVG ikonlar
+- **Dikey Ortalama:** İkonlar input kutusunun tam ortasında
+- **Buton Animasyonları:** Alttan gelme animasyonu kaldırıldı
+- **Responsive Tasarım:** Tüm cihazlarda mükemmel görünüm
+- **Accessibility:** ARIA attributes ve keyboard navigation
 
 ### 🎨 **UI/UX İyileştirmeleri**
 - **GradientBackground Component:** Tüm sayfalarda tutarlı gradient arka planlar
