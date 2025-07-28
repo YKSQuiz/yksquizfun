@@ -7,6 +7,7 @@ import { TestSelection } from './components/features/quiz';
 import { SubjectSelector, AltKonuSelector } from './components/common/subjects';
 import { Market } from './components/features/market';
 import { initializeABTests } from './utils/abTesting';
+import ScrollToTop from './components/common/ScrollToTop';
 
 // Lazy load heavy components
 const Quiz = lazy(() => import('./components/features/quiz/Quiz'));
@@ -40,6 +41,16 @@ const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 };
 
 const App: React.FC = () => {
+  // Scroll to top on route change
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
+    };
+    
+    window.addEventListener('popstate', handleRouteChange);
+    return () => window.removeEventListener('popstate', handleRouteChange);
+  }, []);
+
   useEffect(() => {
     let start = Date.now();
     function saveSession() {
@@ -67,6 +78,7 @@ const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>

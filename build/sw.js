@@ -1,9 +1,10 @@
-const CACHE_NAME = 'yksquiz-v1';
+const CACHE_NAME = 'yksquiz-v2';
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',
   '/static/css/main.css',
-  '/yksquizfavicon.png'
+  '/yksquizfavicon.png',
+  '/manifest.json'
 ];
 
 // Install event

@@ -106,6 +106,11 @@ const Home: React.FC = React.memo(() => {
     return `Yeni enerji için: ${minutes}:${seconds}`;
   }, [regenCountdown]);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Update user ref when user changes
   useEffect(() => {
     userRef.current = user;

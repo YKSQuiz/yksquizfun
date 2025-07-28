@@ -5,8 +5,8 @@ import {
   signOut,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
+  setPersistence,
+  browserLocalPersistence,
   User as FirebaseUser
 } from 'firebase/auth';
 import {
@@ -21,9 +21,8 @@ import { Jokers, JokersUsed, User } from '../types';
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
-  login: (email: string, password: string) => Promise<boolean>;
+  login: (email: string, password: string, rememberMe?: boolean) => Promise<boolean>;
   register: (email: string, password: string, name: string) => Promise<boolean>;
-  loginWithGoogle: () => Promise<boolean>;
   logout: () => void;
   updateUserStats: (correct: number, total: number, duration?: number) => void;
   clearUserStats: () => Promise<void>;
@@ -397,8 +396,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return () => unsubscribe();
   }, []);
 
-  const login = async (email: string, password: string): Promise<boolean> => {
+  const login = async (email: string, password: string, rememberMe: boolean = false): Promise<boolean> => {
     try {
+      if (rememberMe) {
+        await setPersistence(auth, browserLocalPersistence);
+      }
+      
       const result = await signInWithEmailAndPassword(auth, email, password);
       const profile = await getUserProfile(result.user);
       setUser(profile);
@@ -436,18 +439,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const loginWithGoogle = async (): Promise<boolean> => {
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const profile = await getUserProfile(result.user);
-      setUser(profile);
-      setIsAuthenticated(true);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  };
+
 
   const logout = async () => {
     // Oturum süresi kaydet (kalan süre)
@@ -639,7 +631,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     isAuthenticated,
     login,
     register,
-    loginWithGoogle,
     logout,
     updateUserStats,
     clearUserStats,
@@ -653,7 +644,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     isAuthenticated, 
     login, 
     register, 
-    loginWithGoogle, 
     logout, 
     updateUserStats, 
     clearUserStats, 
