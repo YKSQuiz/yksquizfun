@@ -1,8 +1,8 @@
-# YKS Quiz Uygulaması - v29 - Detaylı Dokümantasyon
+# YKS Quiz Uygulaması - v34 - Detaylı Dokümantasyon
 
 ## 📋 İçindekiler
 1. [Genel Bakış](#genel-bakış)
-2. [Yeni Özellikler v29](#yeni-özellikler-v29)
+2. [Yeni Özellikler v34](#yeni-özellikler-v34)
 3. [Teknik Mimari](#teknik-mimari)
 4. [Kullanıcı Sistemi](#kullanıcı-sistemi)
 5. [Quiz Sistemi](#quiz-sistemi)
@@ -22,7 +22,7 @@
 
 ## 🎯 Genel Bakış
 
-**YKS Quiz v27**, Yükseköğretim Kurumları Sınavı (YKS) için hazırlanan öğrencilere yönelik modern bir quiz uygulamasıdır. Uygulama, TYT (Temel Yeterlilik Testi) ve AYT (Alan Yeterlilik Testi) konularını kapsayan kapsamlı bir eğitim platformudur.
+**YKS Quiz v34**, Yükseköğretim Kurumları Sınavı (YKS) için hazırlanan öğrencilere yönelik modern bir quiz uygulamasıdır. Uygulama, TYT (Temel Yeterlilik Testi) ve AYT (Alan Yeterlilik Testi) konularını kapsayan kapsamlı bir eğitim platformudur.
 
 ### 🎯 Ana Hedefler
 - YKS sınavına hazırlanan öğrencilere interaktif quiz deneyimi sunmak
@@ -89,7 +89,7 @@
 
 ### 🔧 Proje Yapısı
 ```
-yksquizv29/
+yksquizv34/
 ├── public/             # Statik dosyalar
 │   ├── index.html      # Ana HTML dosyası
 │   ├── sitemap.xml     # SEO için sitemap
@@ -456,7 +456,7 @@ interface ABTestConfig {
 
 ### 🗂️ Ana Dizinler
 ```
-yksquizv29/
+yksquizv34/
 ├── public/              # Statik dosyalar (5 dosya)
 ├── src/                 # Kaynak kodlar
 │   ├── components/      # React bileşenleri
@@ -534,7 +534,7 @@ styles/
 ```bash
 # Projeyi klonla
 git clone <repository-url>
-cd yksquizv29
+cd yksquizv34
 
 # Bağımlılıkları yükle
 npm install
