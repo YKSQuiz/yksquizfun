@@ -16,7 +16,7 @@ sudo apt-get install -y nodejs nginx git
 
 # 3. Uygulamayı klonlayın
 sudo mkdir -p /var/www/yksquiz.fun
-sudo git clone https://github.com/YKSQuiz/yksquizfunv2.git /var/www/yksquiz.fun
+sudo git clone https://github.com/YKSQuiz/yksquizfun.git /var/www/yksquiz.fun
 sudo chown -R $USER:$USER /var/www/yksquiz.fun
 
 # 4. Bağımlılıkları kurun ve build edin
